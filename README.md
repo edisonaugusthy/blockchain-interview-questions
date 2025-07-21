@@ -1283,17 +1283,1785 @@ Each protocol provides specific functionality (lending, trading, derivatives) th
 
 **[⬆ Back to Top](#-table-of-contents)**
 
-## 106. What is Total Value Locked (TVL)?
+**[⬆ Back to Top](#-table-of-contents)**
 
-TVL measures **the total dollar value of assets deposited in DeFi protocols** as a metric of adoption and scale.
+## 107. What is optimistic rollup?
+
+Optimistic rollup is a **layer 2 scaling solution that assumes transactions are valid** unless challenged within a dispute period.
 
 **Detailed Explanation:**
-Calculated by summing all deposited assets at current market prices. Use
+Processes transactions off-chain and posts compressed data to mainnet. Fraud proofs enable challenging invalid state transitions. Provides near-instant transactions with mainnet security guarantees.
 
-## 🚀 Contributing
+**[⬆ Back to Top](#-table-of-contents)**
 
-Feel free to contribute additional questions or improve existing explanations by submitting a pull request.
+## 108. What is ZK-rollup?
 
-## 📝 License
+ZK-rollup is a **layer 2 solution using zero-knowledge proofs** to guarantee transaction validity without dispute periods.
+
+**Detailed Explanation:**
+Generates cryptographic proofs of correct execution for transaction batches. Enables immediate finality and higher throughput than optimistic rollups. More complex to implement but offers stronger security guarantees.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 109. What are state channels?
+
+State channels are **off-chain protocols enabling multiple transactions** between parties with minimal on-chain interaction.
+
+**Detailed Explanation:**
+Participants lock funds on-chain, conduct unlimited off-chain transactions, then settle final state on-chain. Enables instant, low-cost microtransactions. Example: Lightning Network for Bitcoin.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 110. What is Lightning Network?
+
+Lightning Network is a **Bitcoin layer 2 payment channel network** enabling instant, low-fee transactions.
+
+**Detailed Explanation:**
+Creates bidirectional payment channels between parties. Enables routing payments through intermediate nodes. Settles net balances on Bitcoin blockchain when channels close.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 111. What are sidechains?
+
+Sidechains are **independent blockchains connected to main chains** through two-way pegged asset transfers.
+
+**Detailed Explanation:**
+Enable experimentation with different consensus mechanisms and features. Assets locked on main chain and minted on sidechain. Examples include Polygon and Liquid Network.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 112. What is plasma framework?
+
+Plasma framework creates **hierarchical blockchains with periodic commitment** to main chain for scalability.
+
+**Detailed Explanation:**
+Child chains process transactions independently and commit merkle roots to parent chain. Enables mass exit mechanisms for security. Largely superseded by optimistic and ZK rollups.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 113. What are commit chains?
+
+Commit chains **periodically post state commitments to main blockchain** without full transaction data.
+
+**Detailed Explanation:**
+Validators process transactions off-chain and commit state roots on-chain. Provides scalability while maintaining some security guarantees. Requires trust in validator set for data availability.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 114. What is data availability sampling?
+
+Data availability sampling enables **light clients to verify data availability** without downloading entire blocks.
+
+**Detailed Explanation:**
+Clients randomly sample small portions of blocks to verify availability with high probability. Uses erasure coding to ensure reconstruction from partial data. Critical for scalable blockchain verification.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 115. What are fraud proofs?
+
+Fraud proofs are **cryptographic evidence that invalid state transitions occurred** in optimistic systems.
+
+**Detailed Explanation:**
+Enable challenging incorrect computations by providing minimal proof of error. Allow honest minority to prove majority wrongdoing. Essential for optimistic rollup security models.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 116. What is the challenge period in optimistic rollups?
+
+The challenge period is **the time window for submitting fraud proofs** against potentially invalid state transitions.
+
+**Detailed Explanation:**
+Typically 1-7 days, balancing security and user experience. Longer periods provide more security but delay finality. Validators must remain online to challenge invalid proofs.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 117. What are exit mechanisms in Layer 2?
+
+Exit mechanisms allow **users to withdraw funds to main chain** even if layer 2 becomes unavailable.
+
+**Detailed Explanation:**
+Include mass exits, emergency withdrawals, and forced inclusion mechanisms. Ensure users aren't trapped if layer 2 fails or becomes censored. Critical for layer 2 security guarantees.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 118. What are atomic swaps?
+
+Atomic swaps enable **trustless cryptocurrency exchange between different blockchains** without intermediaries.
+
+**Detailed Explanation:**
+Use hash time-locked contracts (HTLCs) to ensure either both parties receive funds or both get refunded. Enable decentralized cross-chain trading without centralized exchanges.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 119. What are relay chains?
+
+Relay chains are **central coordination chains** that connect multiple parallel blockchains in systems like Polkadot.
+
+**Detailed Explanation:**
+Provide shared security and cross-chain communication for connected parachains. Handle consensus and validation while parachains process transactions. Enable specialized blockchain interoperability.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 120. What are the security risks of cross-chain bridges?
+
+Bridge risks include **smart contract vulnerabilities, centralized key management, and validator compromise**.
+
+**Detailed Explanation:**
+Bridges hold large amounts of locked assets, making them attractive targets. Centralized bridges create single points of failure. Decentralized bridges face consensus and economic security challenges.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 121. What is Delegated Proof of Stake (DPoS)?
+
+DPoS is a **consensus mechanism where token holders vote for delegates** who validate transactions on their behalf.
+
+**Detailed Explanation:**
+Combines democratic voting with efficient validation. Delegates (witnesses/block producers) are incentivized to act honestly or face removal. Provides faster finality than traditional PoS.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 122. What is Proof of Authority (PoA)?
+
+PoA is a **consensus mechanism where pre-approved validators** create blocks based on their identity rather than stake.
+
+**Detailed Explanation:**
+Validators are known entities with reputation at stake. Provides fast, predictable block times with low energy consumption. Used in private and consortium blockchains.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 123. What is Practical Byzantine Fault Tolerance (PBFT)?
+
+PBFT is a **consensus algorithm that tolerates up to 1/3 malicious nodes** in partially synchronous networks.
+
+**Detailed Explanation:**
+Uses multiple rounds of voting to achieve agreement. Provides immediate finality but requires all validators to communicate. Used in permissioned networks with known participants.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 124. What is Proof of History (PoH)?
+
+PoH creates a **cryptographic timestamp sequence** proving events occurred in specific chronological order.
+
+**Detailed Explanation:**
+Uses sequential hashing to create verifiable passage of time. Enables validators to agree on time without external time sources. Used by Solana to improve consensus efficiency.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 125. What is Tendermint consensus?
+
+Tendermint is a **Byzantine fault-tolerant consensus engine** providing immediate finality for blockchain applications.
+
+**Detailed Explanation:**
+Separates consensus from application logic. Uses round-based voting with validators. Provides strong consistency guarantees and is used by Cosmos ecosystem blockchains.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 126. What is the CAP theorem in blockchain context?
+
+CAP theorem states **distributed systems cannot simultaneously guarantee consistency, availability, and partition tolerance**.
+
+**Detailed Explanation:**
+Blockchains typically choose consistency and partition tolerance over availability. During network splits, nodes may become unavailable but maintain consistency when reconnected.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 127. What is fork choice rule?
+
+Fork choice rule determines **which blockchain branch to follow** when multiple valid chains exist.
+
+**Detailed Explanation:**
+Bitcoin uses longest chain rule. Ethereum uses GHOST protocol considering uncle blocks. Rules balance security, liveness, and resistance to manipulation attacks.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 128. What is gasper (Ethereum 2.0's consensus)?
+
+Gasper combines **Casper FFG finality gadget with LMD GHOST fork choice** for Ethereum 2.0 consensus.
+
+**Detailed Explanation:**
+LMD GHOST handles chain growth, while Casper FFG provides finality. Validators vote on blocks and checkpoints. Combines fast block production with strong finality guarantees.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 129. What are eclipse attacks?
+
+Eclipse attacks **isolate nodes from the honest network** by controlling their network connections.
+
+**Detailed Explanation:**
+Attackers surround target nodes with malicious peers, feeding false information. Can enable double-spending and consensus manipulation. Prevented through diverse peer selection and monitoring.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 130. What is the stake grinding attack?
+
+Stake grinding attack involves **manipulating randomness in proof-of-stake** to increase selection probability.
+
+**Detailed Explanation:**
+Validators try different inputs to influence random leader selection. Mitigated through commit-reveal schemes, verifiable random functions, and limiting grinding opportunities.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 131. What is SHA-256?
+
+SHA-256 is a **cryptographic hash function producing 256-bit outputs** used in Bitcoin and many blockchain systems.
+
+**Detailed Explanation:**
+Part of SHA-2 family, provides strong security properties including pre-image resistance and collision resistance. Used for proof-of-work mining, Merkle tree construction, and digital signatures.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 132. What is the avalanche effect?
+
+The avalanche effect occurs when **small input changes produce drastically different hash outputs**.
+
+**Detailed Explanation:**
+Ensures minor modifications to data completely change the hash, making tampering detectable. Critical property for cryptographic hash functions used in blockchain integrity verification.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 133. How are Bitcoin addresses generated?
+
+Bitcoin addresses are **derived from public keys through hashing and encoding** processes.
+
+**Detailed Explanation:**
+Process: private key → public key → hash (SHA-256 + RIPEMD-160) → checksum → Base58 encoding. Different address types (P2PKH, P2SH, Bech32) use varying encoding schemes.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 134. What is the secp256k1 curve?
+
+Secp256k1 is the **elliptic curve used by Bitcoin and Ethereum** for public key cryptography.
+
+**Detailed Explanation:**
+Provides 128-bit security level with 256-bit keys. Chosen for efficiency and wide implementation support. Used for generating key pairs and creating digital signatures.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 135. What are zk-SNARKs vs zk-STARKs?
+
+**zk-SNARKs require trusted setup but produce smaller proofs**, while **zk-STARKs are transparent but create larger proofs**.
+
+**Detailed Explanation:**
+SNARKs: Succinct, fast verification, trusted setup vulnerability. STARKs: Scalable, quantum-resistant, no trusted setup needed. Choice depends on security requirements and efficiency constraints.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 136. What is homomorphic encryption?
+
+Homomorphic encryption allows **computation on encrypted data** without decrypting it first.
+
+**Detailed Explanation:**
+Enables privacy-preserving computation where results remain encrypted until decrypted by authorized parties. Useful for confidential smart contracts and private data processing.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 137. What are commitment schemes?
+
+Commitment schemes allow **binding to values without revealing them** until a later reveal phase.
+
+**Detailed Explanation:**
+Two phases: commit (hide value) and reveal (prove committed value). Properties include hiding and binding. Used in voting systems, auctions, and anti-front-running mechanisms.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 138. What is a Merkle proof?
+
+A Merkle proof is **cryptographic evidence that data exists in a Merkle tree** without revealing the entire tree.
+
+**Detailed Explanation:**
+Provides hash path from leaf to root, enabling verification with logarithmic proof size. Efficient for light clients to verify transaction inclusion without downloading entire blocks.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 139. What is the birthday paradox in cryptography?
+
+The birthday paradox shows **collision probability increases faster than expected** with the number of attempts.
+
+**Detailed Explanation:**
+For 256-bit hashes, finding collisions requires roughly 2^128 attempts, not 2^256. Important for understanding cryptographic security levels and attack complexity.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 140. What is a replay attack?
+
+A replay attack **reuses valid signed transactions** from one context in different circumstances.
+
+**Detailed Explanation:**
+Attacker captures legitimate transactions and replays them to cause unintended effects. Prevented through nonces, timestamps, and chain-specific signatures.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 141. How do you prevent replay attacks?
+
+Replay attacks are prevented through **nonces, chain IDs, and transaction uniqueness** mechanisms.
+
+**Detailed Explanation:**
+Include monotonic nonces in transactions, use chain-specific identifiers, implement expiration times, and ensure transaction uniqueness through proper signature schemes.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 142. What is the scalability trilemma?
+
+The scalability trilemma describes **trade-offs between throughput, latency, and cost** in blockchain systems.
+
+**Detailed Explanation:**
+Increasing transaction throughput often increases latency or costs. Solutions involve layer 2 scaling, sharding, and consensus optimizations to improve all three metrics.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 143. What is transaction sharding vs state sharding?
+
+**Transaction sharding splits transaction processing**, while **state sharding partitions blockchain state** across different shards.
+
+**Detailed Explanation:**
+Transaction sharding parallelizes execution without state partitioning. State sharding divides accounts/contracts across shards, requiring cross-shard communication protocols.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 144. What is block size optimization?
+
+Block size optimization **balances transaction throughput with propagation delay** and storage requirements.
+
+**Detailed Explanation:**
+Larger blocks increase throughput but slow propagation and increase storage costs. Optimal sizing considers network bandwidth, validation time, and decentralization goals.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 145. What is transaction compression?
+
+Transaction compression **reduces data size through efficient encoding** and batching techniques.
+
+**Detailed Explanation:**
+Methods include signature aggregation, state diffs, and custom encoding schemes. Enables more transactions per block and reduces storage costs without protocol changes.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 146. What are parallel execution models?
+
+Parallel execution models **process multiple transactions simultaneously** to increase throughput.
+
+**Detailed Explanation:**
+Requires careful handling of state conflicts and dependencies. Approaches include optimistic execution with rollback and dependency graph analysis.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 147. What is pipelining in blockchain?
+
+Pipelining **overlaps different stages of transaction processing** to improve overall throughput.
+
+**Detailed Explanation:**
+Separates transaction execution, validation, and commitment phases. Enables processing multiple batches simultaneously while maintaining correctness and ordering.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 148. What is the data availability problem?
+
+The data availability problem ensures **all network participants can access transaction data** needed for verification.
+
+**Detailed Explanation:**
+Validators may produce valid block headers without publishing underlying data. Solutions include data availability sampling, erasure coding, and incentive mechanisms.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 149. What are erasure codes in blockchain?
+
+Erasure codes enable **data reconstruction from partial information** by adding redundancy.
+
+**Detailed Explanation:**
+Allow reconstructing full data from any subset of encoded pieces. Used in data availability sampling to ensure light clients can verify data availability efficiently.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 150. What is optimistic processing?
+
+Optimistic processing **assumes transactions will succeed** and processes them speculatively before full validation.
+
+**Detailed Explanation:**
+Improves latency by starting execution before dependencies resolve. Requires rollback mechanisms when assumptions prove incorrect. Used in high-performance blockchain systems.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 151. What is Hyperledger Fabric?
+
+Hyperledger Fabric is an **enterprise permissioned blockchain platform** with modular architecture.
+
+**Detailed Explanation:**
+Features include pluggable consensus, private channels, and chaincode smart contracts. Designed for business use cases requiring privacy, performance, and governance controls.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 152. What is a channel in Hyperledger Fabric?
+
+A channel is a **private communication subnet** between specific network members in Hyperledger Fabric.
+
+**Detailed Explanation:**
+Enables confidential transactions among channel members. Each channel maintains separate ledger and chaincode instances. Supports business networks with multiple privacy requirements.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 153. What is chaincode?
+
+Chaincode is **smart contract logic** that defines business rules and transaction operations in Hyperledger Fabric.
+
+**Detailed Explanation:**
+Written in Go, Java, or Node.js. Executes in isolated containers for security. Manages ledger state through key-value operations and supports complex business logic.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 154. What is the ordering service in Hyperledger Fabric?
+
+The ordering service **sequences transactions into blocks** and distributes them to network participants.
+
+**Detailed Explanation:**
+Implements pluggable consensus algorithms (Raft, Kafka). Separates transaction ordering from validation, enabling modular architecture and improved performance.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 155. What is membership service provider (MSP)?
+
+MSP **manages identity and access control** for network participants in Hyperledger Fabric.
+
+**Detailed Explanation:**
+Handles certificate authorities, identity validation, and role-based access control. Enables integration with existing enterprise identity systems and PKI infrastructure.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 156. What is R3 Corda?
+
+R3 Corda is a **distributed ledger platform designed for financial institutions** with privacy and regulatory compliance.
+
+**Detailed Explanation:**
+Features point-to-point transactions, legal contract integration, and regulatory compliance tools. Focuses on financial use cases with institutional requirements.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 157. What is JPMorgan's Quorum?
+
+Quorum is **JPMorgan's enterprise Ethereum fork** with privacy features and permissioned networking.
+
+**Detailed Explanation:**
+Adds private transactions, enhanced permissions, and performance improvements to Ethereum. Designed for enterprise use cases requiring privacy and consortium governance.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 158. What is blockchain-as-a-service (BaaS)?
+
+BaaS provides **cloud-hosted blockchain infrastructure** managed by third-party providers.
+
+**Detailed Explanation:**
+Offers pre-configured networks, development tools, and managed services. Reduces deployment complexity and operational overhead for enterprises adopting blockchain.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 159. What are private blockchain challenges?
+
+Private blockchain challenges include **reduced decentralization, trust requirements, and limited innovation**.
+
+**Detailed Explanation:**
+Centralized control reduces censorship resistance. Requires trust in network operators. Limited ecosystem effects compared to public blockchains.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 160. What is Truffle framework?
+
+Truffle is a **development framework for Ethereum applications** providing compilation, testing, and deployment tools.
+
+**Detailed Explanation:**
+Includes built-in smart contract compilation, automated testing, scriptable deployment, and network management. Simplifies dApp development workflow and provides debugging capabilities.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 161. What is Hardhat?
+
+Hardhat is a **development environment for Ethereum** with advanced debugging and testing capabilities.
+
+**Detailed Explanation:**
+Features local blockchain simulation, detailed error messages, TypeScript support, and plugin ecosystem. Provides superior debugging experience compared to other frameworks.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 162. What is Ganache?
+
+Ganache is a **personal Ethereum blockchain** for development and testing purposes.
+
+**Detailed Explanation:**
+Creates local blockchain with pre-funded accounts, instant mining, and detailed logging. Enables rapid development and testing without mainnet costs or delays.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 163. What is Remix IDE?
+
+Remix IDE is a **web-based development environment** for writing, testing, and deploying smart contracts.
+
+**Detailed Explanation:**
+Provides in-browser compilation, debugging, and deployment tools. Includes static analysis, gas estimation, and integration with various networks and wallets.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 164. What is Web3.js?
+
+Web3.js is a **JavaScript library for interacting with Ethereum** and other EVM-compatible blockchains.
+
+**Detailed Explanation:**
+Provides APIs for account management, contract interaction, and blockchain queries. Enables web applications to communicate with blockchain networks through JSON-RPC.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 165. What is Ethers.js?
+
+Ethers.js is a **modern JavaScript library for Ethereum** with improved API design and TypeScript support.
+
+**Detailed Explanation:**
+Features modular architecture, better error handling, and ENS integration. Provides cleaner APIs compared to Web3.js with focus on developer experience.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 166. What is Metamask?
+
+Metamask is a **browser extension wallet** that enables interaction with Ethereum and web3 applications.
+
+**Detailed Explanation:**
+Provides key management, transaction signing, and dApp connectivity. Acts as bridge between web browsers and blockchain networks, enabling user-friendly dApp experiences.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 167. What are testnets?
+
+Testnets are **separate blockchain networks** used for development and testing without real economic value.
+
+**Detailed Explanation:**
+Enable developers to test applications without cost or risk. Examples include Ropsten, Rinkeby, and Goerli for Ethereum. Provide realistic environments for final testing.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 168. What are faucets in blockchain development?
+
+Faucets are **services providing free testnet tokens** for development and testing purposes.
+
+**Detailed Explanation:**
+Enable developers to obtain test tokens without cost. Often include rate limiting and verification mechanisms. Essential for accessing testnet functionality during development.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 169. What is contract verification?
+
+Contract verification **proves deployed bytecode matches published source code** through compilation reproduction.
+
+**Detailed Explanation:**
+Enables public audit of smart contract functionality. Services like Etherscan provide verification interfaces. Critical for user trust and security assessment.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 170. What is continuous integration for smart contracts?
+
+CI for smart contracts **automates testing, security analysis, and deployment** processes.
+
+**Detailed Explanation:**
+Includes automated unit testing, static analysis, gas optimization checks, and deployment scripts. Ensures code quality and catches issues early in development.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 171. What is account abstraction?
+
+Account abstraction **generalizes Ethereum accounts** to enable programmable validation logic and transaction processing.
+
+**Detailed Explanation:**
+Removes distinction between externally owned accounts and contract accounts. Enables features like social recovery, multi-signature wallets, and custom authentication methods.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 172. What are the benefits of account abstraction?
+
+Benefits include **improved user experience, flexible authentication, and advanced wallet features**.
+
+**Detailed Explanation:**
+Enables gas payment in any token, batch transactions, social recovery, and custom security policies. Reduces barriers to blockchain adoption through better UX.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 173. What is EIP-4337?
+
+EIP-4337 defines **account abstraction implementation** using UserOperation objects and bundler services.
+
+**Detailed Explanation:**
+Introduces parallel mempool for user operations, bundler services for transaction inclusion, and paymaster contracts for gas sponsorship. Enables account abstraction without protocol changes.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 174. What is a central bank digital currency (CBDC)?
+
+A CBDC is **government-issued digital currency** that may or may not use blockchain technology.
+
+**Detailed Explanation:**
+Represents digital version of national currency with potential for programmable money features. Raises questions about privacy, surveillance, and monetary policy implementation.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 175. What are privacy coins?
+
+Privacy coins are **cryptocurrencies designed to hide transaction details** like amounts, senders, and receivers.
+
+**Detailed Explanation:**
+Use advanced cryptography including ring signatures, stealth addresses, and zero-knowledge proofs. Examples include Monero, Zcash, and Dash with varying privacy approaches.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 176. What is the metaverse and blockchain's role?
+
+The metaverse is **persistent virtual worlds** where blockchain enables digital ownership, economies, and interoperability.
+
+**Detailed Explanation:**
+Blockchain provides property rights for virtual assets, cross-platform compatibility, and decentralized governance. Enables new economic models and user-owned virtual experiences.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 177. What is regenerative finance (ReFi)?
+
+ReFi uses **blockchain and DeFi mechanisms** to fund environmental and social regeneration projects.
+
+**Detailed Explanation:**
+Includes carbon credit tokenization, impact measurement, and regenerative asset funding. Aligns financial incentives with positive environmental and social outcomes.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 178. How will quantum computing affect blockchain?
+
+Quantum computing **threatens current cryptographic foundations** but may be mitigated by quantum-resistant algorithms.
+
+**Detailed Explanation:**
+Could break elliptic curve cryptography and RSA. Blockchain networks must transition to post-quantum cryptography. Timeline and impact depend on quantum computing development.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 179. What is the future of blockchain scalability?
+
+Future scalability involves **layer 2 solutions, sharding, and improved consensus** mechanisms working together.
+
+**Detailed Explanation:**
+Combines optimistic and ZK rollups, beacon chain sharding, and consensus improvements. Aims for thousands of transactions per second while maintaining decentralization.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 180. How might AI integrate with blockchain technology?
+
+AI integration includes **automated smart contracts, predictive analytics, and decentralized AI training**.
+
+**Detailed Explanation:**
+Enables autonomous agents, AI-powered DeFi strategies, and blockchain-secured AI models. Creates synergies between decentralized infrastructure and artificial intelligence.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 181. What is gas optimization?
+
+Gas optimization **reduces transaction costs** through efficient smart contract design and coding practices.
+
+**Detailed Explanation:**
+Involves storage pattern optimization, function call reduction, and assembly usage. Critical for user adoption and protocol sustainability, especially during high network congestion.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 182. What are gas optimization techniques?
+
+Techniques include **storage packing, batch operations, and assembly optimizations**.
+
+**Detailed Explanation:**
+Pack structs efficiently, use events for cheap storage, minimize external calls, leverage assembly for critical paths, and implement gas-efficient algorithms.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 183. What assembly optimizations improve performance?
+
+Assembly optimizations include **direct memory manipulation, efficient hashing, and custom opcodes**.
+
+**Detailed Explanation:**
+Bypass Solidity compiler overhead for critical operations. Directly access EVM opcodes for mathematical operations, memory management, and cryptographic functions.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 184. How do you handle large datasets in blockchain applications?
+
+Large datasets require **off-chain storage with on-chain commitments** and efficient data structures.
+
+**Detailed Explanation:**
+Use IPFS for data storage, Merkle trees for verification, state trees for efficient updates, and pagination for retrieval. Balance cost, accessibility, and integrity.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 185. What is automated smart contract auditing?
+
+Automated auditing uses **static analysis tools** to identify common vulnerabilities and code quality issues.
+
+**Detailed Explanation:**
+Tools scan for reentrancy, integer overflow, access control issues, and gas optimization opportunities. Complements but doesn't replace manual security reviews.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 186. What is static analysis for smart contracts?
+
+Static analysis **examines code without execution** to identify potential security vulnerabilities and bugs.
+
+**Detailed Explanation:**
+Analyzes control flow, data flow, and code patterns to detect issues like reentrancy, unhandled exceptions, and logic errors. Provides early feedback in development.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 187. What is dynamic testing for smart contracts?
+
+Dynamic testing **executes contracts with various inputs** to identify runtime vulnerabilities and edge cases.
+
+**Detailed Explanation:**
+Includes fuzzing, property-based testing, and simulation of adverse conditions. Reveals issues that static analysis might miss through actual execution.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 188. What is responsible disclosure in blockchain?
+
+Responsible disclosure involves **privately reporting vulnerabilities** to allow fixes before public announcement.
+
+**Detailed Explanation:**
+Balances security improvement with preventing exploitation. Includes coordinated disclosure timelines, patch development, and public communication strategies.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 189. What is incident response for blockchain systems?
+
+Incident response includes **preparation, detection, containment, and recovery** procedures for security breaches.
+
+**Detailed Explanation:**
+Involves monitoring systems, emergency procedures, communication plans, and post-incident analysis. Critical for maintaining user trust and system integrity.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 190. What is a multi-signature wallet?
+
+A multi-signature wallet **requires multiple signatures** to authorize transactions, enhancing security through distributed control.
+
+**Detailed Explanation:**
+Implements M-of-N signature schemes where M signatures from N possible signers are required. Reduces single points of failure and enables shared custody arrangements.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 191. What are threshold signatures?
+
+Threshold signatures enable **group signing where any subset of members** can generate valid signatures.
+
+**Detailed Explanation:**
+Implements cryptographic schemes where t-of-n participants can sign without revealing individual private keys. More efficient than multi-signature for large groups.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 192. What is key management?
+
+Key management encompasses **generation, storage, distribution, and rotation** of cryptographic keys.
+
+**Detailed Explanation:**
+Includes secure random generation, hardware security modules, key escrow, and lifecycle management. Critical for maintaining security in blockchain systems.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 193. What is operational security for crypto?
+
+Operational security involves **protecting against human errors and social engineering** in cryptocurrency operations.
+
+**Detailed Explanation:**
+Includes secure communication, personnel screening, process documentation, and insider threat mitigation. Often overlooked but critical attack vector.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 194. What is a hardware wallet?
+
+A hardware wallet is a **physical device that stores private keys offline** for enhanced security against online threats.
+
+**Detailed Explanation:**
+Isolates private keys from internet-connected devices, preventing remote attacks. Transactions are signed within the device and verified through secure displays. Examples include Ledger and Trezor devices.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 195. What is a cold wallet vs hot wallet?
+
+**Cold wallets store keys offline for security**, while **hot wallets maintain online connectivity for convenience**.
+
+**Detailed Explanation:**
+Cold storage includes hardware wallets, paper wallets, and air-gapped computers. Hot wallets enable frequent transactions but face online attack risks. Most users employ hybrid approaches.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 196. What is seed phrase recovery?
+
+Seed phrase recovery uses **mnemonic phrases to restore wallet access** when devices are lost or damaged.
+
+**Detailed Explanation:**
+Typically 12-24 words derived from BIP39 standard. Generates all private keys deterministically. Must be stored securely as anyone with the phrase controls the funds.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 197. What is deterministic wallet generation?
+
+Deterministic wallets **generate all keys from a single seed** using mathematical algorithms for reproducible key creation.
+
+**Detailed Explanation:**
+Enables backup and recovery through single seed phrase. All addresses and private keys can be regenerated from the master seed, simplifying wallet management.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 198. What is hierarchical deterministic (HD) wallets?
+
+HD wallets **create tree structures of keys** from a master seed, enabling organized key management and enhanced privacy.
+
+**Detailed Explanation:**
+Follows BIP32 standard for key derivation. Enables generating unlimited addresses without exposing master key. Supports account hierarchies and extended public keys for watch-only wallets.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 199. What is a brain wallet?
+
+A brain wallet **derives private keys from memorized passphrases** rather than random generation.
+
+**Detailed Explanation:**
+Uses human-memorable phrases converted to private keys through hashing. Extremely vulnerable to dictionary attacks and not recommended due to poor entropy in human-chosen phrases.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 200. What is paper wallet?
+
+A paper wallet **stores private keys printed on physical paper** for offline storage.
+
+**Detailed Explanation:**
+Contains private key and corresponding address printed or written on paper. Provides cold storage but vulnerable to physical damage, loss, and discovery. Largely replaced by hardware wallets.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 201. What is address reuse?
+
+Address reuse involves **using the same blockchain address multiple times**, reducing privacy and potentially security.
+
+**Detailed Explanation:**
+Links transactions together, enabling transaction graph analysis and reducing anonymity. Some systems like Bitcoin encourage generating new addresses for each transaction.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 202. What is coin mixing/tumbling?
+
+Coin mixing **obscures transaction histories** by pooling funds from multiple users and redistributing them.
+
+**Detailed Explanation:**
+Breaks the link between input and output addresses through coordinated transactions. Regulatory concerns exist regarding money laundering, leading to compliance challenges for service providers.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 203. What is ring signature?
+
+Ring signature is a **cryptographic scheme enabling anonymous signatures** from a group without revealing the actual signer.
+
+**Detailed Explanation:**
+Proves one group member signed without identifying which one. Used in privacy coins like Monero to hide transaction senders. Provides plausible deniability for all ring members.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 204. What is stealth address?
+
+Stealth addresses **generate unique one-time addresses** for each transaction to enhance recipient privacy.
+
+**Detailed Explanation:**
+Sender generates unique address for recipient using elliptic curve operations. Only recipient can detect payments meant for them. Prevents address linkage and improves privacy.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 205. What is confidential transaction?
+
+Confidential transactions **hide transaction amounts** while maintaining verifiability of total balance conservation.
+
+**Detailed Explanation:**
+Uses cryptographic commitments and range proofs to prove amounts are positive without revealing values. Enables privacy while preventing inflation attacks through hidden money creation.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 206. What is bulletproof?
+
+Bulletproofs are **short non-interactive zero-knowledge proofs** that don't require trusted setup.
+
+**Detailed Explanation:**
+Enable efficient range proofs for confidential transactions. Significantly smaller than earlier proof systems and don't require trusted parameter generation. Used in privacy-focused cryptocurrencies.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 207. What is Mimblewimble?
+
+Mimblewimble is a **privacy-focused blockchain protocol** that obscures transaction details while enabling verification.
+
+**Detailed Explanation:**
+Combines confidential transactions, cut-through, and dandelion propagation. Provides privacy and scalability through transaction compression. Implemented in Grin and Beam cryptocurrencies.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 208. What is Zcash's zk-SNARKs implementation?
+
+Zcash uses **zk-SNARKs to enable fully private transactions** while maintaining a public blockchain.
+
+**Detailed Explanation:**
+Shielded transactions hide sender, receiver, and amount through zero-knowledge proofs. Requires trusted setup ceremony for parameter generation. Enables selective disclosure for compliance.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 209. What is Monero's privacy features?
+
+Monero uses **ring signatures, stealth addresses, and RingCT** for comprehensive transaction privacy.
+
+**Detailed Explanation:**
+Ring signatures hide senders, stealth addresses protect recipients, and RingCT conceals amounts. Mandatory privacy features ensure all transactions maintain anonymity by default.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 210. What is a mixnet?
+
+A mixnet is a **network of servers that relay messages** to hide communication patterns and metadata.
+
+**Detailed Explanation:**
+Messages are encrypted in layers and routed through multiple servers that reorder and delay transmission. Provides anonymity against traffic analysis attacks in communication networks.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 211. What is transaction graph analysis?
+
+Transaction graph analysis **examines blockchain transaction patterns** to identify relationships between addresses.
+
+**Detailed Explanation:**
+Uses clustering algorithms, address reuse detection, and pattern matching to link addresses to real-world identities. Employed by law enforcement and compliance services.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 212. What is address clustering?
+
+Address clustering **groups blockchain addresses** likely controlled by the same entity through transaction analysis.
+
+**Detailed Explanation:**
+Uses heuristics like common input ownership, change address detection, and timing analysis. Enables tracking funds across multiple addresses despite pseudonymous nature.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 213. What is blockchain forensics?
+
+Blockchain forensics **investigates cryptocurrency transactions** for law enforcement and compliance purposes.
+
+**Detailed Explanation:**
+Combines transaction analysis, address clustering, and external data sources to trace fund flows. Used in criminal investigations, regulatory compliance, and risk assessment.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 214. What is chain analysis?
+
+Chain analysis **tracks cryptocurrency movements** through blockchain transaction history examination.
+
+**Detailed Explanation:**
+Company and methodology for analyzing blockchain data to identify suspicious activities, money laundering, and regulatory compliance. Provides tools for exchanges and government agencies.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 215. What is compliance in crypto?
+
+Compliance involves **following regulatory requirements** for cryptocurrency businesses and transactions.
+
+**Detailed Explanation:**
+Includes AML/KYC procedures, transaction monitoring, sanctions screening, and reporting requirements. Varies by jurisdiction and continues evolving as regulations develop.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 216. What is AML/KYC in blockchain?
+
+AML/KYC are **anti-money laundering and know-your-customer** procedures for identifying users and monitoring transactions.
+
+**Detailed Explanation:**
+AML prevents money laundering through transaction monitoring and suspicious activity reporting. KYC requires identity verification for account opening. Essential for regulatory compliance.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 217. What is FATF travel rule?
+
+The FATF travel rule requires **sharing sender/receiver information** for cryptocurrency transactions above certain thresholds.
+
+**Detailed Explanation:**
+Virtual asset service providers must collect and transmit customer information for transactions over $1000. Aims to prevent money laundering and terrorist financing through crypto.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 218. What is regulatory sandboxes?
+
+Regulatory sandboxes provide **controlled environments for testing innovative financial services** with relaxed regulatory requirements.
+
+**Detailed Explanation:**
+Enable fintech and crypto companies to test products with real customers under regulatory supervision. Help regulators understand new technologies while protecting consumers.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 219. What is MiCA regulation?
+
+MiCA (Markets in Crypto Assets) is **EU regulation governing cryptocurrency** and digital asset services.
+
+**Detailed Explanation:**
+Provides comprehensive framework for crypto asset issuance, trading, and custody services. Includes stablecoin reserves, market manipulation rules, and consumer protection measures.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 220. What is the Howey test?
+
+The Howey test determines **whether an asset qualifies as a security** under US law.
+
+**Detailed Explanation:**
+Four-part test: investment of money, common enterprise, expectation of profit, and reliance on others' efforts. Used to classify tokens and determine regulatory requirements.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 221. What is securities law in crypto?
+
+Securities law governs **investment contracts and financial instruments** including many cryptocurrency tokens.
+
+**Detailed Explanation:**
+Determines registration requirements, disclosure obligations, and trading restrictions. Many tokens may qualify as securities requiring SEC compliance in the United States.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 222. What is taxation of cryptocurrency?
+
+Cryptocurrency taxation treats **digital assets as property** subject to capital gains and income tax.
+
+**Detailed Explanation:**
+Transactions trigger taxable events including trading, spending, and receiving crypto. Requires tracking cost basis, holding periods, and fair market values for all transactions.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 223. What is GDPR and blockchain?
+
+GDPR creates **challenges for blockchain implementations** due to immutability conflicting with data protection rights.
+
+**Detailed Explanation:**
+Right to erasure conflicts with blockchain's immutability. Solutions include off-chain storage, encryption, and privacy-preserving technologies to maintain compliance.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 224. What is right to be forgotten vs immutability?
+
+The conflict between **data deletion rights and blockchain immutability** requires technical and legal solutions.
+
+**Detailed Explanation:**
+GDPR grants erasure rights while blockchains provide permanent records. Solutions include data minimization, encryption key deletion, and off-chain personal data storage.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 225. What is data sovereignty in blockchain?
+
+Data sovereignty addresses **control and governance of data** across borders in blockchain networks.
+
+**Detailed Explanation:**
+Determines which laws apply to data stored on distributed networks. Relevant for cross-border blockchain applications and compliance with national data protection laws.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 226. What is blockchain voting system design?
+
+Blockchain voting systems use **distributed ledgers for transparent and verifiable elections** while maintaining voter privacy.
+
+**Detailed Explanation:**
+Challenges include voter authentication, ballot secrecy, coercion resistance, and auditability. Requires careful balance between transparency and privacy through cryptographic techniques.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 227. What is supply chain traceability?
+
+Supply chain traceability uses **blockchain to track products** from origin to consumer for authenticity and safety.
+
+**Detailed Explanation:**
+Records product journey, certifications, and ownership transfers immutably. Enables verification of organic, fair trade, and sustainability claims while preventing counterfeiting.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 228. What is digital identity on blockchain?
+
+Digital identity systems use **blockchain for user authentication** and credential verification without central authorities.
+
+**Detailed Explanation:**
+Enables user-controlled identity management with cryptographic proofs. Supports privacy-preserving authentication and interoperability across different services and platforms.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 229. What is self-sovereign identity (SSI)?
+
+SSI enables **individuals to control their digital identities** without relying on centralized identity providers.
+
+**Detailed Explanation:**
+Users manage identity credentials directly using blockchain and cryptography. Provides privacy, portability, and user control over personal data sharing and verification.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 230. What is verifiable credentials?
+
+Verifiable credentials are **tamper-evident credentials** that can be cryptographically verified without contacting the issuer.
+
+**Detailed Explanation:**
+Include digital signatures and blockchain anchoring for verification. Enable privacy-preserving credential sharing where users control which information to disclose.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 231. What is decentralized identifier (DID)?
+
+DIDs are **globally unique identifiers** that enable verifiable, decentralized digital identity without central authorities.
+
+**Detailed Explanation:**
+Resolve to DID documents containing cryptographic material and service endpoints. Enable interoperable identity systems across different blockchain networks and applications.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 232. What is identity verification on blockchain?
+
+Blockchain identity verification uses **cryptographic proofs and consensus** to validate identity claims without central authorities.
+
+**Detailed Explanation:**
+Combines zero-knowledge proofs, multi-party computation, and blockchain anchoring. Enables privacy-preserving identity verification for various use cases.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 233. What is reputation system on blockchain?
+
+Blockchain reputation systems **track user behavior and reliability** through immutable records and community consensus.
+
+**Detailed Explanation:**
+Aggregates feedback and performance metrics across platforms. Provides portable reputation that users own and control, enabling trust in decentralized marketplaces.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 234. What is decentralized social media?
+
+Decentralized social media uses **blockchain and peer-to-peer networks** to enable censorship-resistant communication platforms.
+
+**Detailed Explanation:**
+Removes central platform control over content and user data. Challenges include content moderation, scalability, and user experience compared to centralized platforms.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 235. What is content moderation in Web3?
+
+Web3 content moderation **balances free speech with harmful content removal** using decentralized governance and community standards.
+
+**Detailed Explanation:**
+Employs reputation systems, community voting, and algorithmic filtering. Challenges include scale, appeals processes, and consistent policy enforcement across decentralized platforms.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 236. What is decentralized storage?
+
+Decentralized storage **distributes data across multiple nodes** for redundancy, censorship resistance, and availability.
+
+**Detailed Explanation:**
+Eliminates single points of failure through geographic and organizational distribution. Examples include IPFS, Filecoin, and Storj providing alternatives to centralized cloud storage.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 237. What is Filecoin?
+
+Filecoin is a **decentralized storage network** that incentivizes storage provision through cryptocurrency rewards.
+
+**Detailed Explanation:**
+Miners provide storage space and receive Filecoin tokens for storing and retrieving data. Uses proof-of-replication and proof-of-spacetime to verify storage provision.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 238. What is Arweave?
+
+Arweave provides **permanent data storage** through a blockchain-based protocol designed for long-term data preservation.
+
+**Detailed Explanation:**
+Uses novel consensus mechanism and economic incentives to ensure data persistence. Targets use cases requiring permanent storage like web archiving and historical records.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 239. What is Swarm?
+
+Swarm is **Ethereum's distributed storage platform** providing decentralized storage and communication services.
+
+**Detailed Explanation:**
+Designed as Ethereum's storage layer with incentivization through BZZ tokens. Enables dApp data storage, content distribution, and messaging capabilities.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 240. What is content addressing?
+
+Content addressing **identifies data by its cryptographic hash** rather than location, ensuring integrity and deduplication.
+
+**Detailed Explanation:**
+Same content always produces same address regardless of location. Enables efficient caching, deduplication, and verification of data integrity across distributed systems.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 241. What is peer-to-peer networking?
+
+P2P networking enables **direct communication between nodes** without central servers or intermediaries.
+
+**Detailed Explanation:**
+Each node acts as both client and server, sharing resources and data directly. Provides redundancy, scalability, and censorship resistance for distributed applications.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 242. What is distributed hash table (DHT)?
+
+DHT is a **decentralized data structure** that distributes key-value pairs across network nodes for efficient lookup.
+
+**Detailed Explanation:**
+Enables distributed data storage and retrieval without central coordination. Used in P2P networks for resource discovery and routing in systems like BitTorrent and IPFS.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 243. What is BitTorrent and blockchain?
+
+BitTorrent integration with blockchain **incentivizes file sharing** through token rewards and creates decentralized content distribution.
+
+**Detailed Explanation:**
+Projects like BitTorrent Token (BTT) reward seeders and provide premium features. Demonstrates how blockchain can enhance existing P2P protocols with economic incentives.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 244. What is incentivized storage networks?
+
+Incentivized storage networks **reward participants for providing storage** and maintaining data availability through token economics.
+
+**Detailed Explanation:**
+Combine cryptographic proofs with economic incentives to ensure reliable storage. Participants earn tokens for storage provision, data retrieval, and network maintenance.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 245. What is data redundancy in blockchain storage?
+
+Data redundancy **replicates information across multiple nodes** to ensure availability despite node failures.
+
+**Detailed Explanation:**
+Uses erasure coding and replication strategies to maintain data even when some nodes go offline. Balances storage efficiency with fault tolerance requirements.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 246. What is proof of replication?
+
+Proof of replication **verifies that storage providers** actually store committed data copies rather than generating on demand.
+
+**Detailed Explanation:**
+Prevents storage providers from saving space by regenerating data from compressed representations. Ensures genuine storage provision in decentralized storage networks.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 247. What is proof of spacetime?
+
+Proof of spacetime **verifies continuous storage provision** over time periods rather than just at specific moments.
+
+**Detailed Explanation:**
+Combines proof of replication with temporal verification to ensure data remains stored continuously. Prevents storage providers from temporarily storing data just for verification.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 248. What is proof of storage?
+
+Proof of storage **verifies that data is actually stored** by storage providers without revealing the data itself.
+
+**Detailed Explanation:**
+Uses cryptographic challenges and responses to prove storage without data exposure. Enables verification of storage claims while maintaining data privacy and integrity.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 249. What is retrieval mining?
+
+Retrieval mining **incentivizes fast and reliable data retrieval** in decentralized storage networks.
+
+**Detailed Explanation:**
+Storage providers compete to deliver requested data quickly, earning rewards based on performance. Improves user experience by optimizing data access times.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 250. What is storage mining?
+
+Storage mining **rewards participants for providing storage space** in decentralized networks like Filecoin.
+
+**Detailed Explanation:**
+Miners earn tokens proportional to storage committed and verified through cryptographic proofs. Creates marketplace for storage services with competitive pricing.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 251. What is NFT metadata storage?
+
+NFT metadata storage addresses **where and how NFT attributes are stored** beyond the blockchain token itself.
+
+**Detailed Explanation:**
+Most NFTs store metadata off-chain due to cost constraints. Solutions include IPFS, Arweave, and centralized servers, each with different durability and accessibility trade-offs.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 252. What is NFT royalties?
+
+NFT royalties provide **ongoing payments to creators** from secondary sales through smart contract automation.
+
+**Detailed Explanation:**
+Programmed into smart contracts to automatically pay percentage of sale price to original creators. Implementation varies across marketplaces and may not be universally enforced.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 253. What is NFT fractionalization?
+
+NFT fractionalization **divides ownership of high-value NFTs** into smaller, tradeable tokens representing partial ownership.
+
+**Detailed Explanation:**
+Enables broader access to expensive NFTs through shared ownership. Creates liquidity for illiquid assets but introduces complexity in governance and decision-making.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 254. What is dynamic NFT?
+
+Dynamic NFTs **change properties over time** based on external data or predefined conditions.
+
+**Detailed Explanation:**
+Metadata or visual elements evolve based on time, user actions, or real-world events. Enables interactive and evolving digital art, gaming items, and utility tokens.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 255. What is soulbound token (SBT)?
+
+Soulbound tokens are **non-transferrable NFTs** representing credentials, achievements, or identity attributes tied to specific individuals.
+
+**Detailed Explanation:**
+Cannot be transferred or sold, making them suitable for representing qualifications, reputation, or membership. Enables on-chain identity and social graph construction.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 256. What is proof of attendance protocol (POAP)?
+
+POAP creates **NFT badges commemorating event attendance** as verifiable digital collectibles.
+
+**Detailed Explanation:**
+Issues unique tokens to event participants as proof of attendance. Creates digital memory collection and enables community building around shared experiences.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 257. What is NFT lending/borrowing?
+
+NFT lending allows **using NFTs as collateral** for cryptocurrency loans or renting NFTs for temporary use.
+
+**Detailed Explanation:**
+Enables liquidity for NFT holders without selling assets. Borrowers can access utility or status from expensive NFTs without purchasing. Risk includes NFT value volatility.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 258. What is NFT marketplace design?
+
+NFT marketplace design involves **platform architecture for trading digital assets** with features for discovery, verification, and transaction.
+
+**Detailed Explanation:**
+Includes user interfaces, smart contract integration, payment processing, and curation mechanisms. Considerations include fees, user experience, and creator tools.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 259. What is Dutch auction for NFTs?
+
+Dutch auction is a **price discovery mechanism** where NFT prices start high and decrease until someone purchases.
+
+**Detailed Explanation:**
+Enables fair price discovery for unique assets without comparable sales. Buyers must decide optimal purchase timing, balancing price with availability risk.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 260. What is bonding curve?
+
+Bonding curves are **mathematical functions determining token price** based on supply, enabling continuous token issuance and burning.
+
+**Detailed Explanation:**
+Price automatically adjusts with supply changes through algorithmic market making. Enables fund-raising mechanisms and creates liquidity for new tokens without traditional exchanges.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 261. What is automated market making curve?
+
+AMM curves are **mathematical formulas governing token exchange rates** in decentralized exchanges.
+
+**Detailed Explanation:**
+Define relationship between token reserves and exchange rates. Different curves optimize for different scenarios: constant product for general trading, constant sum for stable pairs.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 262. What is constant product formula?
+
+Constant product formula maintains **x \* y = k relationship** in automated market makers like Uniswap.
+
+**Detailed Explanation:**
+As one token is purchased, its price increases while the other decreases, maintaining constant product. Creates price impact and slippage for large trades.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 263. What is constant sum formula?
+
+Constant sum formula maintains **x + y = k relationship** for assets that should trade at equal value.
+
+**Detailed Explanation:**
+Suitable for stablecoins and synthetic assets with expected 1:1 exchange rates. Provides minimal slippage for small trades but lacks price discovery mechanism.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 264. What is constant mean formula?
+
+Constant mean formula **maintains weighted average of asset values** in multi-asset liquidity pools.
+
+**Detailed Explanation:**
+Generalizes constant product to multiple assets with configurable weights. Used by Balancer to create index-like pools with automatic rebalancing through trading.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 265. What is concentrated liquidity?
+
+Concentrated liquidity allows **liquidity providers to specify price ranges** for more efficient capital utilization.
+
+**Detailed Explanation:**
+Providers earn fees only when prices trade within their specified ranges. Enables higher capital efficiency but requires active management for optimal returns.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 266. What is just-in-time (JIT) liquidity?
+
+JIT liquidity involves **providing liquidity just before large trades** to capture maximum fees with minimal risk.
+
+**Detailed Explanation:**
+Sophisticated actors monitor mempool for large trades and provide targeted liquidity. Improves capital efficiency but may reduce rewards for passive liquidity providers.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 267. What is MEV protection?
+
+MEV protection **shields users from value extraction** through various technical and economic mechanisms.
+
+**Detailed Explanation:**
+Includes private mempools, fair ordering protocols, commit-reveal schemes, and MEV redistribution. Aims to reduce harmful MEV while preserving beneficial aspects.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 268. What is private mempool?
+
+Private mempools **hide pending transactions** from potential front-runners until inclusion in blocks.
+
+**Detailed Explanation:**
+Transactions are sent directly to miners or through private networks. Reduces MEV extraction opportunities but may create centralization concerns and censorship risks.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 269. What is commit-reveal schemes?
+
+Commit-reveal schemes **prevent front-running** by hiding transaction details until after commitment period.
+
+**Detailed Explanation:**
+Two-phase process: commit (submit hash), then reveal (submit actual transaction). Prevents others from seeing and front-running transaction details during commit phase.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 270. What is fair ordering protocols?
+
+Fair ordering protocols **ensure equitable transaction sequencing** rather than pure price-based prioritization.
+
+**Detailed Explanation:**
+Use mechanisms like first-come-first-served, batch auctions, or randomized ordering. Aims to reduce MEV extraction while maintaining system efficiency and security.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 271. What is batch auction?
+
+Batch auctions **collect orders over time periods** and execute them simultaneously at uniform clearing prices.
+
+**Detailed Explanation:**
+Eliminates temporal arbitrage opportunities by removing order priority within batches. Provides fair price discovery and MEV protection for participants.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 272. What is time-weighted average price (TWAP)?
+
+TWAP calculates **average asset price over specific time periods** to reduce impact of short-term volatility.
+
+**Detailed Explanation:**
+Provides price benchmarks less susceptible to manipulation. Used in oracle systems, algorithmic trading, and performance measurement to smooth price data.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 273. What is volume-weighted average price (VWAP)?
+
+VWAP calculates **average price weighted by trading volume** over specified periods.
+
+**Detailed Explanation:**
+Reflects actual market activity better than simple averages. Used by institutions for execution benchmarking and by traders to assess trade quality relative to market activity.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 274. What is constant function market maker (CFMM)?
+
+CFMM uses **mathematical functions to determine exchange rates** automatically without order books.
+
+**Detailed Explanation:**
+Generalizes various AMM formulas (constant product, sum, mean) under unified framework. Enables algorithmic market making with predictable behavior and continuous liquidity.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 275. What is dynamic market making?
+
+Dynamic market making **adjusts pricing parameters** based on market conditions and volatility.
+
+**Detailed Explanation:**
+Modifies spreads, inventory limits, and pricing models in response to volatility, volume, and other market factors. Improves profitability and risk management for market makers.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 276. What is algorithmic trading on DEX?
+
+Algorithmic trading on DEX uses **automated strategies** to execute trades on decentralized exchanges.
+
+**Detailed Explanation:**
+Includes arbitrage bots, market making algorithms, and trend following strategies. Must account for gas costs, MEV, and unique DEX characteristics like AMM mechanics.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 277. What is arbitrage trading?
+
+Arbitrage trading **exploits price differences** between markets to earn risk-free profits.
+
+**Detailed Explanation:**
+Buys assets where prices are low and sells where prices are high. In DeFi, includes cross-DEX arbitrage, CEX-DEX arbitrage, and flash loan arbitrage strategies.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 278. What is triangular arbitrage?
+
+Triangular arbitrage **exploits price inconsistencies** across three different currency pairs or markets.
+
+**Detailed Explanation:**
+Involves trading through chain of assets to return to original position with profit. Common in forex and cryptocurrency markets where multiple trading pairs exist.
+
+**[⬆ Back to Top](#-table-of-contents)**
+
+## 279. What is statistical arbitrage?
+
+Statistical arbitrage uses **quantitative models** to identify and exploit temporary price discrepancies.
+
+**Detailed Explanation:**
+Relies on mean reversion, correlation analysis, and statistical models rather than pure price differences. Involves more risk than pure arbitrage but can be more scalable.
+
+**[⬆ Back to Top](#-table-of-contents)\*\***Detailed Explanation:\*\*
+Calculated by summing all deposited assets at current market prices. Used to compare protocol size and success. Can be misleading due to price volatility and recursive counting across protocols.
+
+## 280. What is market making strategies?
+
+Market making strategies involve **providing liquidity by placing buy and sell orders** to profit from bid-ask spreads.
+
+**Detailed Explanation:**
+Market makers continuously quote both sides of the market, earning spreads while providing liquidity. Strategies include grid trading, inventory management, and dynamic spread adjustment based on volatility and market conditions.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+## 281. What is grid trading?
+
+Grid trading places **buy and sell orders at regular intervals** above and below current price to profit from volatility.
+
+**Detailed Explanation:**
+Creates a grid of orders that execute as price moves up and down. Profits from ranging markets through repeated buy-low-sell-high cycles. Risk includes trending markets that break out of the grid.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+## 282. What is mean reversion trading?
+
+Mean reversion trading assumes **prices will return to average levels** after extreme movements.
+
+**Detailed Explanation:**
+Buys oversold assets and sells overbought ones expecting price normalization. Works well in stable markets but fails during structural changes or strong trends. Requires careful risk management.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+## 283. What is momentum trading?
+
+Momentum trading **follows price trends** expecting them to continue in the same direction.
+
+**Detailed Explanation:**
+Buys rising assets and sells falling ones based on technical indicators and trend analysis. Opposite of mean reversion, betting on trend continuation rather than reversal. Success depends on timing and trend strength.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+## 284. What is dollar-cost averaging (DCA)?
+
+DCA involves **making regular purchases regardless of price** to reduce impact of volatility over time.
+
+**Detailed Explanation:**
+Systematic investment approach that buys fixed dollar amounts at regular intervals. Reduces timing risk and average purchase price over time. Popular for long-term cryptocurrency accumulation strategies.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+## 285. What is rebalancing strategies?
+
+Rebalancing strategies **maintain target portfolio allocations** by periodically buying and selling assets.
+
+**Detailed Explanation:**
+Systematically sells outperforming assets and buys underperforming ones to maintain desired risk profile. Can be time-based, threshold-based, or volatility-adjusted. Provides disciplined approach to portfolio management.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+## 286. What is portfolio optimization?
+
+Portfolio optimization **maximizes returns for given risk levels** through mathematical asset allocation models.
+
+**Detailed Explanation:**
+Uses modern portfolio theory, risk-return analysis, and correlation matrices to determine optimal asset weights. Considers expected returns, volatility, and correlations to construct efficient portfolios.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+## 287. What is risk management in DeFi?
+
+DeFi risk management involves **identifying and mitigating various protocol risks** including smart contract, market, and liquidity risks.
+
+**Detailed Explanation:**
+Encompasses position sizing, diversification, insurance protocols, and automated risk controls. Must consider unique DeFi risks like impermanent loss, protocol upgrades, and composability risks across interconnected protocols.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+## 288. What is value at risk (VaR)?
+
+VaR estimates **maximum expected loss** over specific time periods with given confidence levels.
+
+**Detailed Explanation:**
+Statistical measure expressing potential loss magnitude and probability. For example, 1-day VaR of $100k at 95% confidence means 95% probability of losing less than $100k in one day. Used for risk budgeting and capital allocation.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+## 289. What is liquidity risk?
+
+Liquidity risk is **inability to buy or sell assets** without significant price impact due to insufficient market depth.
+
+**Detailed Explanation:**
+Particularly relevant in DeFi where liquidity can be withdrawn rapidly. Affects ability to exit positions, rebalance portfolios, and respond to market changes. Managed through diversification and liquidity monitoring.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+## 290. What is smart contract risk?
+
+Smart contract risk involves **vulnerabilities in protocol code** that could lead to loss of funds or unexpected behavior.
+
+**Detailed Explanation:**
+Includes bugs, exploits, upgrade risks, and economic design flaws. Mitigation involves code audits, formal verification, insurance protocols, and gradual deployment strategies. Cannot be eliminated entirely in complex protocols.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+## 291. What is oracle risk?
+
+Oracle risk arises from **dependence on external data feeds** that may be manipulated or fail.
+
+**Detailed Explanation:**
+Price oracle manipulation can trigger liquidations or enable arbitrage attacks. Mitigation includes multiple oracle sources, time delays, circuit breakers, and on-chain price validation mechanisms.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+## 292. What is governance risk?
+
+Governance risk involves **malicious or poor governance decisions** that harm protocol users or value.
+
+**Detailed Explanation:**
+Includes governance attacks, centralized control, and misaligned incentives. Risks range from parameter changes to complete protocol control. Mitigation involves time locks, voting thresholds, and decentralized governance structures.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+## 293. What is regulatory risk?
+
+Regulatory risk involves **changing legal requirements** that could impact protocol operations or user access.
+
+**Detailed Explanation:**
+Governments may restrict DeFi access, require compliance measures, or ban certain activities. Difficult to mitigate but considerations include jurisdiction selection, compliance preparation, and regulatory monitoring.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+## 294. What is counterparty risk?
+
+Counterparty risk is **risk of loss from other party's failure** to meet obligations in transactions or agreements.
+
+**Detailed Explanation:**
+Reduced but not eliminated in DeFi through smart contracts and collateralization. Remaining risks include smart contract bugs, oracle failures, and governance attacks. Traditional counterparty risk exists in centralized services.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+## 295. What is systemic risk in DeFi?
+
+Systemic risk involves **interconnected protocol failures** that could cascade throughout the DeFi ecosystem.
+
+**Detailed Explanation:**
+High composability means failures can propagate across protocols. Examples include stablecoin depegging, oracle failures, or major protocol exploits affecting dependent protocols. Requires ecosystem-wide risk monitoring.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+## 296. What is correlation risk?
+
+Correlation risk occurs when **asset correlations increase during stress** periods, reducing diversification benefits.
+
+**Detailed Explanation:**
+Assets may become highly correlated during market crashes despite historical independence. Particularly relevant in cryptocurrency markets where correlations tend to approach 1.0 during major selloffs.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+## 297. What is basis risk?
+
+Basis risk is **difference between hedging instrument and underlying asset** performance.
+
+**Detailed Explanation:**
+Occurs when hedges don't perfectly track underlying exposures. In DeFi, includes differences between spot and derivative prices, cross-exchange price variations, and synthetic asset tracking errors.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+## 298. What is tail risk?
+
+Tail risk refers to **extreme events with low probability** but high impact that fall outside normal risk models.
+
+**Detailed Explanation:**
+Black swan events that traditional risk models underestimate. In DeFi, includes novel attack vectors, protocol interactions, and market events beyond historical experience. Requires stress testing and scenario analysis.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+## 299. What is black swan events in crypto?
+
+Black swan events are **unpredictable, high-impact occurrences** that significantly affect cryptocurrency markets.
+
+**Detailed Explanation:**
+Examples include major exchange hacks, regulatory bans, protocol exploits, and macroeconomic shocks. Characterized by extreme rarity, severe impact, and retrospective predictability. Require robust risk management and diversification.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+## 300. What is stress testing for DeFi protocols?
+
+Stress testing involves **simulating extreme scenarios** to assess protocol resilience and identify potential failure points.
+
+**Detailed Explanation:**
+Tests include price crashes, liquidity drains, oracle failures, and governance attacks. Uses historical data, Monte Carlo simulations, and adversarial scenarios. Essential for understanding protocol limits and improving risk management systems.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+---
+
+## 🎯 Summary
+
+This collection covers:
+
+- **Blockchain Fundamentals** (1-40): Core concepts, consensus, and architecture
+- **Smart Contracts & Solidity** (41-80): Development, security, and optimization
+- **DeFi & Protocols** (81-140): Token standards, AMMs, and financial primitives
+- **Scaling & Infrastructure** (141-200): Layer 2, sharding, and performance
+- **Security & Privacy** (201-240): Attacks, defenses, and privacy technologies
+- **Enterprise & Governance** (241-280): Regulation, compliance, and business applications
+- **Trading & Risk Management** (281-300): Strategies, risks, and portfolio management
+
+## 📚 Additional Resources
+
+- [Ethereum Documentation](https://ethereum.org/developers)
+- [Solidity Documentation](https://docs.soliditylang.org)
+- [DeFi Pulse](https://defipulse.com)
+- [Blockchain Security Best Practices](https://consensys.github.io/smart-contract-best-practices)
+
+## 🤝 Contributing
+
+Found an error or want to add more questions? Please submit a pull request with:
+
+- Clear question formulation
+- Concise one-line answer
+- Detailed explanation with examples
+- Proper formatting and links
+
+## 📄 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
